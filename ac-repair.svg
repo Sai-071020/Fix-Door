@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" width="300" height="180" aria-labelledby="acTitle">
+  <title id="acTitle">AC Repair Illustration</title>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#E8F8FF"/>
+      <stop offset="1" stop-color="#DFF6FF"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feBlend in="SourceGraphic" in2="b"/>
+    </filter>
+  </defs>
+
+  <!-- background rounded card -->
+  <rect width="100%" height="100%" rx="20" fill="url(#bgGrad)"/>
+
+  <!-- AC unit body -->
+  <g transform="translate(28,30)">
+    <rect x="0" y="0" width="180" height="80" rx="10" fill="#FFFFFF" stroke="#C7E6F6" stroke-width="2"/>
+    <!-- vents -->
+    <g fill="#E6F7FB">
+      <rect x="12" y="12" width="156" height="12" rx="3"/>
+      <rect x="12" y="30" width="156" height="12" rx="3"/>
+      <rect x="12" y="48" width="156" height="8" rx="3"/>
+    </g>
+    <!-- fan circle -->
+    <circle cx="40" cy="40" r="18" fill="#F0FDFF" stroke="#BEEAF8" stroke-width="2"/>
+    <g transform="translate(40,40)" fill="#9EDAF0">
+      <path d="M0-10 L6 0 L0 10 L-6 0 Z" />
+      <circle r="3" fill="#7CC6DD"/>
+    </g>
+  </g>
+
+  <!-- wrench overlay to indicate repair -->
+  <g transform="translate(190,80) rotate(20)">
+    <rect x="0" y="0" width="8" height="60" rx="4" fill="#2B6CB0"/>
+    <path d="M-2 -2 L22 10 L30 2 L22 -6 Z" fill="#2B6CB0"/>
+    <path d="M22 10 L34 22" stroke="#2B6CB0" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="24" cy="8" r="3" fill="#fff"/>
+  </g>
+
+  <!-- snowflake small icon to denote cooling -->
+  <g transform="translate(230,38)" fill="#60A5FA" opacity="0.95">
+    <path d="M0-8 L0 8 M-8 0 L8 0 M-5.5 -5.5 L5.5 5.5 M-5.5 5.5 L5.5 -5.5" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="2" fill="#60A5FA"/>
+  </g>
+
+</svg>

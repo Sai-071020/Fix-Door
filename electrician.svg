@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" width="300" height="180" aria-labelledby="elAltTitle">
+  <title id="elAltTitle">Electrician: lightbulb and bolt illustration</title>
+  <defs>
+    <linearGradient id="bgAlt" x1="0" x2="1">
+      <stop offset="0" stop-color="#FEFFFB"/>
+      <stop offset="1" stop-color="#F7FFF7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" rx="20" fill="url(#bgAlt)"/>
+
+  <!-- Lightbulb with bolt (left) -->
+  <g transform="translate(36,26)">
+    <!-- bulb glow -->
+    <circle cx="64" cy="52" r="44" fill="#FDE68A" opacity="0.12"/>
+    <!-- bulb glass -->
+    <path d="M64 18c14 0 26 12 26 26 0 10-5 18-12 22v10a6 6 0 0 1-6 6h-16a6 6 0 0 1-6-6v-10c-7-4-12-12-12-22 0-14 12-26 26-26z" fill="#FFFFFF" stroke="#F6C85C" stroke-width="2"/>
+    <!-- screw base -->
+    <rect x="52" y="104" width="24" height="10" rx="3" fill="#D1D5DB"/>
+    <!-- bolt inside bulb -->
+    <path d="M66 38 L56 62 L68 62 L58 86 L76 56 L64 56 Z" fill="#F97316"/>
+  </g>
+
+  <!-- Screwdriver + plug (right) -->
+  <g transform="translate(170,30)">
+    <!-- screwdriver handle -->
+    <rect x="8" y="60" width="84" height="18" rx="6" fill="#0EA5A0"/>
+    <rect x="26" y="42" width="36" height="26" rx="4" fill="#065F46"/>
+    <!-- tip -->
+    <path d="M120 82 L132 74 L126 68 L114 76 Z" fill="#374151"/>
+    <!-- plug icon -->
+    <g transform="translate(0,0) scale(0.9)">
+      <rect x="0" y="0" width="56" height="46" rx="6" fill="#FFFFFF" stroke="#E6F7F2" stroke-width="2"/>
+      <rect x="12" y="8" width="8" height="18" rx="2" fill="#FDE68A"/>
+      <rect x="36" y="8" width="8" height="18" rx="2" fill="#FDE68A"/>
+    </g>
+  </g>
+
+  <!-- small sparks for emphasis -->
+  <g fill="#F59E0B" opacity="0.95">
+    <rect x="140" y="130" width="6" height="2" rx="1"/>
+    <rect x="158" y="118" width="4" height="2" rx="1"/>
+    <rect x="200" y="140" width="6" height="2" rx="1"/>
+  </g>
+
+</svg>

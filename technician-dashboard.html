@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician Dashboard - FIX DOOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                    <a href="index.html" class="logo-text" style="text-decoration: none;">FIX DOOR</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="technician-dashboard.html" class="active">Dashboard</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="user-menu" id="userMenu">
+                        <span id="userName"></span>
+                        <button class="btn-secondary" id="signOutBtn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Technician Dashboard -->
+    <section class="technician-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <a href="index.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to Home
+                </a>
+                <div>
+                    <h1 class="dashboard-title">Technician Dashboard</h1>
+                    <p class="dashboard-subtitle">Manage your service requests and orders</p>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="pendingCount">0</span>
+                            <span class="stat-label">Pending</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon accepted">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="acceptedCount">0</span>
+                            <span class="stat-label">Accepted</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon completed">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="completedCount">0</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="order-tabs">
+                <button class="tab-btn active" data-filter="pending">Pending Requests</button>
+                <button class="tab-btn" data-filter="accepted">Accepted Orders</button>
+                <button class="tab-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <!-- Orders List -->
+            <div class="orders-container" id="ordersContainer">
+                <!-- Orders will be populated by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-orders" id="emptyOrders" style="display: none;">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom: 24px; opacity: 0.5;">
+                    <rect x="10" y="20" width="60" height="50" rx="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 20V10C20 7.79086 21.7909 6 24 6H56C58.2091 6 60 7.79086 60 10V20" stroke="currentColor" stroke-width="2"/>
+                    <path d="M30 35H50M30 45H50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3>No orders found</h3>
+                <p id="emptyMessage">You don't have any orders in this category yet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                        <span class="logo-text">FIX DOOR</span>
+                    </div>
+                    <p class="footer-description">
+                        Fixing Service Delivered right to your doorstep
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">AC Repair</a></li>
+                        <li><a href="index.html">Appliance Repair</a></li>
+                        <li><a href="index.html">Electrician</a></li>
+                        <li><a href="index.html">Solar & CCTV</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="index.html">How It Works</a></li>
+                        <li><a href="index.html">Careers</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Help Center</a></li>
+                        <li><a href="index.html">Privacy Policy</a></li>
+                        <li><a href="index.html">Terms of Service</a></li>
+                        <li><a href="index.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-description">
+                        Email: <a href="mailto:fixdoorofficial@gmail.com">fixdoorofficial@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIX DOOR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="technician-dashboard.js"></script>
+</body>
+</html>
+

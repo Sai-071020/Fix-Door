@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Technician - FIX DOOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                    <a href="index.html" class="logo-text" style="text-decoration: none;">FIX DOOR</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="user-menu" id="userMenu">
+                        <span id="userName"></span>
+                        <button class="btn-secondary" id="signOutBtn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tracking Section -->
+    <section class="tracking-section">
+        <div class="container">
+            <div class="tracking-container">
+                <!-- Header -->
+                <div class="tracking-header">
+                    <a href="bookings.html" class="back-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Back to Bookings
+                    </a>
+                    <h1 class="tracking-title">Track Your Service</h1>
+                    <p class="tracking-subtitle">Real-time location tracking of your technician</p>
+                </div>
+
+                <!-- Status Timeline -->
+                <div class="status-timeline" id="statusTimeline">
+                    <!-- Status items will be populated by JavaScript -->
+                </div>
+
+                <!-- Map Container -->
+                <div class="map-container">
+                    <div class="map-header">
+                        <h3>Live Location</h3>
+                        <div class="map-controls">
+                            <button class="btn-refresh" id="refreshLocation">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M1 9C1 4.58172 4.58172 1 9 1C11.2091 1 13.2091 1.89543 14.6569 3.34315M17 9C17 13.4183 13.4183 17 9 17C6.79086 17 4.79086 16.1046 3.34315 14.6569M3.34315 3.34315L1 1M14.6569 14.6569L17 17M3.34315 14.6569L1 17M14.6569 3.34315L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div class="map-view" id="mapView">
+                        <!-- Map will be rendered here -->
+                        <div class="map-placeholder" id="mapPlaceholder">
+                            <div class="map-grid"></div>
+                            <div class="customer-location" id="customerLocation">
+                                <div class="location-marker customer">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="8" fill="#10B981"/>
+                                        <circle cx="12" cy="12" r="3" fill="white"/>
+                                    </svg>
+                                    <span class="location-label">You</span>
+                                </div>
+                            </div>
+                            <div class="technician-location" id="technicianLocation">
+                                <div class="location-marker technician">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="8" fill="#6366F1"/>
+                                        <path d="M12 6V12L16 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    <span class="location-label" id="techNameLabel">Technician</span>
+                                </div>
+                            </div>
+                            <div class="route-line" id="routeLine"></div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="info-item">
+                            <span class="info-label">Estimated Arrival</span>
+                            <span class="info-value" id="estimatedTime">15 min</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Distance</span>
+                            <span class="info-value" id="distance">3.2 km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technician Details Card -->
+                <div class="technician-details-card" id="technicianDetailsCard">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-large">
+                            <span id="techAvatarLarge">👨‍🔧</span>
+                        </div>
+                        <div class="tech-info-large">
+                            <h3 id="techNameLarge">Loading...</h3>
+                            <div class="tech-rating-large" id="techRatingLarge">
+                                <span class="rating-stars"></span>
+                                <span class="rating-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-card-body">
+                        <div class="contact-info">
+                            <button class="btn-call" id="callTechnician">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M18.3333 14.075V16.575C18.3333 17.1417 18.1083 17.6833 17.7167 18.075C17.325 18.4667 16.7833 18.6917 16.2167 18.6917C11.8917 18.6917 7.80833 16.8083 4.725 13.725C1.64167 10.6417 -0.241667 6.55833 0.00833333 2.23333C0.00833333 1.66667 0.233333 1.125 0.625 0.733333C1.01667 0.341667 1.55833 0.116667 2.125 0.116667H4.625C5.19167 0.116667 5.73333 0.341667 6.125 0.733333C6.51667 1.125 6.74167 1.66667 6.74167 2.23333V4.73333C6.74167 5.3 6.51667 5.84167 6.125 6.23333C5.73333 6.625 5.19167 6.85 4.625 6.85H3.33333C3.33333 9.16667 4.16667 11.3833 5.66667 13.3333L6.83333 12.1667C7.225 11.775 7.76667 11.55 8.33333 11.55H10.8333C11.4 11.55 11.9417 11.775 12.3333 12.1667C12.725 12.5583 12.95 13.1 12.95 13.6667V16.1667C12.95 16.7333 12.725 17.275 12.3333 17.6667C11.9417 18.0583 11.4 18.2833 10.8333 18.2833H8.33333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                Call Technician
+                            </button>
+                        </div>
+                        <div class="booking-details-section">
+                            <h4>Booking Details</h4>
+                            <div class="detail-row">
+                                <span class="detail-label">Service Type</span>
+                                <span class="detail-value" id="serviceType">-</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Service Charge</span>
+                                <span class="detail-value" id="serviceCharge">-</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Your Address</span>
+                                <span class="detail-value" id="customerAddress">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                        <span class="logo-text">FIX DOOR</span>
+                    </div>
+                    <p class="footer-description">
+                        Fixing Service Delivered right to your doorstep
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">AC Repair</a></li>
+                        <li><a href="index.html">Appliance Repair</a></li>
+                        <li><a href="index.html">Electrician</a></li>
+                        <li><a href="index.html">Solar & CCTV</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="index.html">How It Works</a></li>
+                        <li><a href="index.html">Careers</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Help Center</a></li>
+                        <li><a href="index.html">Privacy Policy</a></li>
+                        <li><a href="index.html">Terms of Service</a></li>
+                        <li><a href="index.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-description">
+                        Email: <a href="mailto:fixdoorofficial@gmail.com">fixdoorofficial@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIX DOOR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="tracking.js"></script>
+</body>
+</html>
+

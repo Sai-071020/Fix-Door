@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#6366F1"/>
+  <path d="M32 16L40 32H24L32 16Z" fill="#fff"/>
+  <path d="M20 42L32 50L44 42V34H20V42Z" fill="#fff"/>
+  <text x="32" y="60" font-family="Inter, Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Fix Door</text>
+</svg>

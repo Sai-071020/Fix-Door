@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Technicians - FIX DOOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                    <a href="index.html" class="logo-text" style="text-decoration: none;">FIX DOOR</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary">Sign In</button>
+                    <button class="btn-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="container">
+            <div class="service-header-content">
+                <a href="index.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to Services
+                </a>
+                <h1 class="service-title" id="serviceTitle">Select Your Service</h1>
+                <p class="service-description">Choose your city and find the best technicians near you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Selection & Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="citySelect" class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 10C11.3807 10 12.5 8.88071 12.5 7.5C12.5 6.11929 11.3807 5 10 5C8.61929 5 7.5 6.11929 7.5 7.5C7.5 8.88071 8.61929 10 10 10Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 18.3333C13.3333 15 16.6667 11.6667 16.6667 7.5C16.6667 4.46243 14.2043 2 11.1667 2H8.83333C5.79576 2 3.33333 4.46243 3.33333 7.5C3.33333 11.6667 6.66667 15 10 18.3333Z" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Select City
+                    </label>
+                    <select id="citySelect" class="city-select">
+                        <option value="">Choose your city</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="pune">Pune</option>
+                        <option value="kolkata">Kolkata</option>
+                        <option value="ahmedabad">Ahmedabad</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sortSelect" class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 6H17M5 10H15M7 14H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Sort By
+                    </label>
+                    <select id="sortSelect" class="city-select">
+                        <option value="rating">Highest Rating</option>
+                        <option value="experience">Most Experience</option>
+                        <option value="price">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technicians List -->
+    <section class="technicians-section">
+        <div class="container">
+            <div id="techniciansContainer" class="technicians-container">
+                <div class="empty-state">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom: 24px; opacity: 0.5;">
+                        <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2"/>
+                        <path d="M40 25V40M40 40L50 50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Select a city to view available technicians</h3>
+                    <p>Choose your city from the dropdown above to see technicians in your area</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                        <span class="logo-text">FIX DOOR</span>
+                    </div>
+                    <p class="footer-description">
+                        Fixing Service Delivered right to your doorstep
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">AC Repair</a></li>
+                        <li><a href="index.html">Appliance Repair</a></li>
+                        <li><a href="index.html">Electrician</a></li>
+                        <li><a href="index.html">Solar & CCTV</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="index.html">How It Works</a></li>
+                        <li><a href="index.html">Careers</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Help Center</a></li>
+                        <li><a href="index.html">Privacy Policy</a></li>
+                        <li><a href="index.html">Terms of Service</a></li>
+                        <li><a href="index.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-description">
+                        Email: <a href="mailto:fixdoorofficial@gmail.com">fixdoorofficial@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIX DOOR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="service-details.js"></script>
+</body>
+</html>
+

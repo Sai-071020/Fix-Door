@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIX DOOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="fix door.svg" alt="FIX DOOR logo" class="logo-img">
+                    <span class="logo-text">FIX DOOR</span>
+                </div>
+                <ul class="nav-links">
+                        <li><a href="#services">Services</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary" id="signInBtn">Sign In</button>
+                    <button class="btn-primary" id="getStartedBtn">Get Started</button>
+                    <div class="user-menu" id="userMenu" style="display: none;">
+                        <a href="bookings.html" class="btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 4H14M2 4V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V4M2 4L2 2C2 1.44772 2.44772 1 3 1H13C13.5523 1 14 1.44772 14 2V4M5 7H11M5 10H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            My Bookings
+                        </a>
+                        <span id="userName"></span>
+                        <button class="btn-secondary" id="signOutBtn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-headline">
+                        FIX DOOR
+                        <span class="highlight">At Your Doorstep</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Fixing Service Delivered right to your doorstep
+                    </p>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <div class="search-box">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <input type="text" placeholder="Search for services..." class="search-input" id="searchInput">
+                            <button class="search-btn">Search</button>
+                        </div>
+                    </div>
+
+                    <!-- AC Repair box removed -->
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Service Categories</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.8★</span>
+                            <span class="stat-label">Average Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Banner Images -->
+        <div class="hero-banner">
+            <div class="banner-grid">
+                <div class="banner-card">
+                    <div class="banner-image ac-repair">
+                        <img src="ac-repair.svg" alt="AC Repair" class="banner-img-element">
+                        <div class="image-overlay">
+                            <span class="service-tag">AC Repair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-card">
+                    <div class="banner-image refrigerator">
+                        <img src="refrigerator.svg" alt="Refrigerator Repair" class="banner-img-element">
+                        <div class="image-overlay">
+                            <span class="service-tag">Refrigerator Repair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-card">
+                    <div class="banner-image washing-machine">
+                        <img src="washing-machine.svg" alt="Washing Machine Repair" class="banner-img-element">
+                        <div class="image-overlay">
+                            <span class="service-tag">Washing Machine Repair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-card">
+                    <div class="banner-image electrician">
+                        <img src="electrician.svg" alt="Electrician" class="banner-img-element">
+                        <div class="image-overlay">
+                            <span class="service-tag">Electrician</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Service Categories</h2>
+                <p class="section-subtitle">Choose from our wide range of professional services</p>
+            </div>
+            
+            <div class="service-grid" id="serviceGrid">
+                <!-- Service cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Get services in three simple steps</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="24" fill="#F0F9FF"/>
+                            <path d="M24 16V32M16 24H32" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">1. Book a Service</h3>
+                    <p class="step-description">Select your service and choose a convenient time slot</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="24" fill="#F0FDF4"/>
+                            <path d="M24 18C20.6863 18 18 20.6863 18 24C18 27.3137 20.6863 30 24 30C27.3137 30 30 27.3137 30 24C30 20.6863 27.3137 18 24 18Z" stroke="#10B981" stroke-width="3"/>
+                            <path d="M24 12V18M24 30V36M18 24H12M30 24H36" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">2. Expert Arrives</h3>
+                    <p class="step-description">A verified professional arrives at your doorstep</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="24" fill="#FEF3C7"/>
+                            <path d="M20 24L24 28L32 20" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">3. Enjoy & Rate</h3>
+                    <p class="step-description">Get quality service and share your experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Permission Popup -->
+    <div class="popup-overlay" id="locationPermissionPopup">
+        <div class="popup-content popup-centered">
+            <div class="popup-header">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="24" fill="#F0F9FF"/>
+                    <path d="M24 12C18.4772 12 14 16.4772 14 22C14 28 24 36 24 36C24 36 34 28 34 22C34 16.4772 29.5228 12 24 12Z" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="24" cy="22" r="3" fill="#3B82F6"/>
+                </svg>
+            </div>
+            <h2>Location Access</h2>
+            <p>Allow location access to find nearby repair services faster.</p>
+            <div class="popup-actions">
+                <button class="btn-primary" id="allowLocationBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Allow Location
+                </button>
+                <button class="btn-secondary" id="skipLocationBtn">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Agreement Popup -->
+    <div class="popup-overlay" id="privacyPolicyPopup">
+        <div class="popup-content popup-centered">
+            <div class="popup-header">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="24" fill="#F0FDF4"/>
+                    <path d="M24 10L14 14V22C14 30 24 36 24 36C24 36 34 30 34 22V14L24 10Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 23L22 26L29 19" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2>Privacy Policy & Terms</h2>
+            <div class="privacy-policy-text">
+                <p>Welcome to FIX DOOR. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.</p>
+                <h4>Data Collection</h4>
+                <p>We collect information you provide directly, such as name, email, phone number, and location data to better serve you.</p>
+                <h4>Data Usage</h4>
+                <p>Your information is used to provide services, communicate updates, and improve our platform. We never sell your personal information.</p>
+                <h4>Your Rights</h4>
+                <p>You have the right to access, modify, or delete your personal information at any time by contacting us.</p>
+            </div>
+            <div class="popup-checkbox">
+                <label>
+                    <input type="checkbox" id="privacyAgreedCheckbox">
+                    <span>I agree to the Privacy Policy and Terms & Conditions</span>
+                </label>
+            </div>
+            <button class="btn-primary" id="privacyContinueBtn" disabled>Continue</button>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+    <div class="toast" id="successToast">
+        <div class="toast-content">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span id="toastMessage">Location access granted successfully.</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                            <img src="fix door.svg" alt="Fix Door logo" class="logo-img">
+                        <span class="logo-text">FIX DOOR</span>
+                    </div>
+                    <p class="footer-description">
+                        Fixing Service Delivered right to your doorstep
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">AC Repair</a></li>
+                        <li><a href="#">Appliance Repair</a></li>
+                        <li><a href="#">Electrician</a></li>
+                        <li><a href="#">Solar & CCTV</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Join as Technician</h4>
+                    <p class="footer-description" style="margin-bottom: 16px;">
+                        Become a service provider and start earning today!
+                    </p>
+                    <button class="btn-primary btn-register-tech" id="registerTechBtn">
+                        Register as Technician
+                    </button>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-description">
+                        Email: <a href="mailto:fixdoorofficial@gmail.com">fixdoorofficial@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIX DOOR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Technician Registration Modal -->
+    <div class="modal-overlay" id="registerTechModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeRegisterModal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <h2>Register as Technician</h2>
+                <p>Fill in your details to become a service provider</p>
+            </div>
+            <form class="register-form" id="registerTechForm">
+                <div class="form-group">
+                    <label for="techName">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M9 9C11.4853 9 13.5 6.98528 13.5 4.5C13.5 2.01472 11.4853 0 9 0C6.51472 0 4.5 2.01472 4.5 4.5C4.5 6.98528 6.51472 9 9 9Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 11.25C5.27208 11.25 2.25 13.5221 2.25 16.5V18H15.75V16.5C15.75 13.5221 12.7279 11.25 9 11.25Z" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Full Name <span class="required">*</span>
+                    </label>
+                    <input type="text" id="techName" name="techName" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="techMobile">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M12.5 1H5.5C4.67157 1 4 1.67157 4 2.5V15.5C4 16.3284 4.67157 17 5.5 17H12.5C13.3284 17 14 16.3284 14 15.5V2.5C14 1.67157 13.3284 1 12.5 1Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 3.5H11M7 14.5H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Mobile Number <span class="required">*</span>
+                    </label>
+                    <input type="tel" id="techMobile" name="techMobile" placeholder="Enter your 10-digit mobile number" pattern="[0-9]{10}" maxlength="10" required>
+                    <small class="form-hint">Enter 10-digit mobile number without spaces</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="techExperience">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 5V9L12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Years of Experience <span class="required">*</span>
+                    </label>
+                    <input type="number" id="techExperience" name="techExperience" placeholder="e.g., 5" min="0" max="50" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="techWork">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M9 1L2 6V16L9 11L16 16V6L9 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                        Type of Work/Services <span class="required">*</span>
+                    </label>
+                    <select id="techWork" name="techWork" required>
+                        <option value="">Select your service type</option>
+                        <option value="AC Repair">AC Repair</option>
+                        <option value="Refrigerator Repair">Refrigerator Repair</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Washing Machine Repair">Washing Machine Repair</option>
+                        <option value="Microwave Repair">Microwave Repair</option>
+                        <option value="Household Technician">Household Technician</option>
+                        <option value="Solar Panel Repair">Solar Panel Repair</option>
+                        <option value="CCTV Repair">CCTV Repair</option>
+                        <option value="Multiple Services">Multiple Services</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="techLocation">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 4V9L12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Location/City <span class="required">*</span>
+                    </label>
+                    <select id="techLocation" name="techLocation" required>
+                        <option value="">Select your city</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="techEmail">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M2 6L9 10L16 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Email Address <span class="required">*</span>
+                    </label>
+                    <input type="email" id="techEmail" name="techEmail" placeholder="Enter your email address" required>
+                </div>
+                
+                <button type="submit" class="btn-primary btn-full">Submit Registration</button>
+                <p class="form-note">
+                    By registering, you agree to our Terms of Service and Privacy Policy. 
+                    We'll review your application and contact you shortly.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="modal-overlay" id="signInModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue</p>
+            </div>
+            
+            <!-- User Type Selection -->
+            <div class="user-type-tabs">
+                <button class="user-type-btn active" data-user-type="customer" id="customerTab">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 10C11.3807 10 12.5 8.88071 12.5 7.5C12.5 6.11929 11.3807 5 10 5C8.61929 5 7.5 6.11929 7.5 7.5C7.5 8.88071 8.61929 10 10 10Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 18.3333C13.3333 15 16.6667 11.6667 16.6667 7.5C16.6667 4.46243 14.2043 2 11.1667 2H8.83333C5.79576 2 3.33333 4.46243 3.33333 7.5C3.33333 11.6667 6.66667 15 10 18.3333Z" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Customer
+                </button>
+                <button class="user-type-btn" data-user-type="technician" id="technicianTab">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2L12 6L16 7L12 8L10 12L8 8L4 7L8 6L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5 15L10 18L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Technician
+                </button>
+            </div>
+            
+            <form class="signin-form" id="signInForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn-primary btn-full">
+                    <span id="signInButtonText">Sign In as Customer</span>
+                </button>
+                <div class="form-divider">
+                    <span>or</span>
+                </div>
+                <button type="button" class="btn-secondary btn-full" id="signUpBtn">
+                    Create New Account
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
